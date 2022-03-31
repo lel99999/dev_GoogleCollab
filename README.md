@@ -6,7 +6,7 @@ Google Collab Development and Notes
   ```
   !apt install ffmpeg
   ```
-- install software
+- install <software>
   ```
   !pip install <software> --ignore-installed
   ```
@@ -16,4 +16,16 @@ Google Collab Development and Notes
   from IPython.display import Audio
   from google.colab import files
   uploaded = files.upload()
+  ```
+- Set upload
+  ```
+  fil = list(uploaded.keys())[0]
+  Audio(fil)
+  print(type(fil))
+  ```
+- Process file
+  ```
+  import os
+  os.rename(fil,"main.mp3")
+  !<software> separate -o output/ main.mp3
   ```
